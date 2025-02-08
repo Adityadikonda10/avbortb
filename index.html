@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVBORT - Professional Backup Solutions</title>
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --light-red: #ff3333;
+            --dark-red: #cc0000;
+            --pure-white: #ffffff;
+            --off-white: #f8f8f8;
+            --light-gray: #f0f0f0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, var(--pure-white), var(--light-gray));
+            color: var(--dark-gray);
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('img/AVBORTRender2[1].png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--dark-gray), var(--primary-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+        }
+
+        .learn-more {
+            background: var(--pure-white);
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        .features-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, var(--pure-white), rgba(255,0,0,0.05));
+        }
+
+        .features-section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, var(--dark-gray), var(--primary-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--pure-white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+            border: 1px solid var(--primary-red);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .team-section {
+            padding: 80px 5%;
+            background: linear-gradient(180deg, rgba(255,0,0,0.02), rgba(255,0,0,0.08));
+        }
+
+        .team-section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, var(--dark-gray), var(--primary-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.15);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid var(--pure-white);
+            box-shadow: 0 8px 16px rgba(255, 0, 0, 0.1);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info h3 {
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .member-title {
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--primary-red), var(--light-red));
+            color: var(--pure-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .team-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                padding: 20px 5%;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .team-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>AVBORT</h1>
+            <p style="color: white;">AVBORT is on-the-go cloud backup device for DSLR Camera. Backs up every image captured on camera to cloud reliably in real time. Reducing client turnaround time and increasing efficiency.</p>
+            <div class="cta-buttons">
+                <a href="#features" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <h2>Why Choose AVBORT</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Easier Backup</h3>
+                <p>Transfer your photos and videos from camera to cloud with ease using AVBORT.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Reliable</h3>
+                <p>Be at ease from the thought of losing your data.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-Time</h3>
+                <p>Automatically sync your photos and videos with prefered cloud services at real time for peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="/img/Untitled_Artwork 4.jpg" alt="Aditya Dikonda">
+                </div>
+                <div class="member-info">
+                    <h3>Aditya Dikonda</h3>
+                    <div class="member-title">Founder & CEO</div>
+                    <p class="member-bio">.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="/img/IMG_6969.JPG" alt="Krishna Yadav">
+                </div>
+                <div class="member-info">
+                    <h3>Krishna Yadav</h3>
+                    <div class="member-title">Chief Operations Officer</div>
+                    <p class="member-bio"></p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="/img/IMG_6931.JPG" alt="Bobby Mehta">
+                </div>
+                <div class="member-info">
+                    <h3>Bobby Mehta</h3>
+                    <div class="member-title">Technical Head</div>
+                    <p class="member-bio"></p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
